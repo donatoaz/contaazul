@@ -1,6 +1,6 @@
 {
 	"name": {
-    "pt_BR": "Criar um novo cliente", 
+    "pt_BR": "Criar um novo cliente",
     "en": "Create a new customer"
   },
   "action_key": "create_customer",
@@ -17,7 +17,7 @@
             "required": true,
             "visible": true,
             "advanced": false,
-            "field_type": "string",
+            "field_type": "custom",
             "data_type": "string",
             "max": 200
         },
@@ -25,6 +25,14 @@
             "key" : "customer.person_type",
             "name": { "pt_BR": "tipo de pessoa", "en": "person type" },
             "description": {"pt_BR": "O tipo de pessoa do cliente","en": "The type of the customer"},
+            "label": {
+                "pt_BR": "tipo de pessoa",
+                "en": "person type"
+            },
+            "placeholder": {
+                "pt_BR": "-",
+                "en": "-"
+            },
             "required": true,
             "visible": true,
             "advanced": false,
@@ -48,7 +56,7 @@
             "required": false,
             "visible": true,
             "advanced": false,
-            "field_type": "string",
+            "field_type": "custom",
             "data_type": "string",
             "max": 200
         },
@@ -62,7 +70,7 @@
             "required": false,
             "visible": true,
             "advanced": false,
-            "field_type": "string",
+            "field_type": "custom",
             "data_type": "string",
             "max": 100
         },
@@ -75,8 +83,8 @@
             },
             "required": false,
             "visible": true,
-            "advanced": false,
-            "field_type": "string",
+            "advanced": true,
+            "field_type": "custom",
             "data_type": "string",
             "max": 50
         },
@@ -89,8 +97,8 @@
             },
             "required": false,
             "visible": true,
-            "advanced": false,
-            "field_type": "string",
+            "advanced": true,
+            "field_type": "custom",
             "data_type": "string",
             "max": 20
         },
@@ -103,8 +111,8 @@
             },
             "required": false,
             "visible": true,
-            "advanced": false,
-            "field_type": "string",
+            "advanced": true,
+            "field_type": "custom",
             "data_type": "string",
             "max": 50
         },
@@ -117,8 +125,8 @@
             },
             "required": false,
             "visible": true,
-            "advanced": false,
-            "field_type": "string",
+            "advanced": true,
+            "field_type": "custom",
             "data_type": "string",
             "max": 20
         },
@@ -129,9 +137,17 @@
                 "pt_BR": "O tipo de indicador de inscrição estadual do cliente",
                 "en": "The state registration type of the customer"
             },
+            "label": {
+                "pt_BR": "indicador de inscrição estadual",
+                "en": "state registration type"
+            },
+            "placeholder": {
+                "pt_BR": "-",
+                "en": "-"
+            },
             "required": false,
             "visible": true,
-            "advanced": false,
+            "advanced": true,
             "field_type": "dropdown",
             "data_type": "string",
             "list": {
@@ -152,8 +168,8 @@
             },
             "required": false,
             "visible": true,
-            "advanced": false,
-            "field_type": "string",
+            "advanced": true,
+            "field_type": "custom",
             "data_type": "string",
             "max": 20
         },
@@ -166,8 +182,8 @@
             },
             "required": false,
             "visible": true,
-            "advanced": false,
-            "field_type": "string",
+            "advanced": true,
+            "field_type": "custom",
             "data_type": "string",
             "max": 40
         },
@@ -180,8 +196,8 @@
             },
             "required": false,
             "visible": true,
-            "advanced": false,
-            "field_type": "string",
+            "advanced": true,
+            "field_type": "custom",
             "data_type": "string",
             "max": 20
         },
@@ -194,8 +210,8 @@
             },
             "required": false,
             "visible": true,
-            "advanced": false,
-            "field_type": "string",
+            "advanced": true,
+            "field_type": "custom",
             "data_type": "string",
             "max": 100
         },
@@ -208,8 +224,8 @@
             },
             "required": false,
             "visible": true,
-            "advanced": false,
-            "field_type": "string",
+            "advanced": true,
+            "field_type": "custom",
             "data_type": "string",
             "max": 40
         }

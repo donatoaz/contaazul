@@ -9,7 +9,11 @@
   "website": "https://contaazul.com",
   "signup_url": "https://cadastro.contaazul.com/experimente/email",
   "api_base_uri": {
-    "production": {"uri": "https://app.contaazul.com/api/v1", "label": "Produção", "default": true}
+    "production": {
+      "uri": "https://app.contaazul.com/api/v1",
+      "label": "Produção",
+      "default": true
+    }
   },
   "authentication": {
     "type": "oauth_2",
