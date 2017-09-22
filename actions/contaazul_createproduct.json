@@ -1,6 +1,6 @@
 {
 	"name": {
-    "pt_BR": "Criar um novo produto", 
+    "pt_BR": "Criar um novo produto",
     "en": "Create a new product"
   },
   "action_key": "create_product",
@@ -11,7 +11,7 @@
   "action_fields": {
     "fields": [
         {
-            "key": "product.name",
+            "key": "name",
             "name": { "pt_BR": "nome", "en": "name" },
             "description": {"pt_BR": "O nome do produto","en": "The name of the product"},
             "required": true,
@@ -22,7 +22,7 @@
             "max": 100
         },
         {
-            "key": "product.value",
+            "key": "value",
             "name": { "pt_BR": "valor", "en": "value" },
             "description": {"pt_BR": "O valor de venda do produto","en": "The sell value of the product"},
             "required": true,
@@ -32,7 +32,7 @@
             "data_type": "decimal"
         },
         {
-            "key": "product.cost",
+            "key": "cost",
             "name": { "pt_BR": "custo", "en": "cost" },
             "description": {"pt_BR": "O valor de custo do produto","en": "The cost value of the product"},
             "required": true,
@@ -42,7 +42,7 @@
             "data_type": "decimal"
         },
         {
-            "key": "product.code",
+            "key": "code",
             "name": { "pt_BR": "codigo", "en": "code" },
             "description": {"pt_BR": "O codigo personalizado do produto","en": "The customized code of the product"},
             "required": false,
@@ -53,7 +53,7 @@
             "max": 20
         },
         {
-            "key": "product.barcode",
+            "key": "barcode",
             "name": { "pt_BR": "codigo de barras", "en": "barcode" },
             "description": {"pt_BR": "O codigo de barras do produto","en": "The barcode of the product"},
             "required": false,
@@ -64,7 +64,7 @@
             "max": 20
         },
         {
-            "key": "product.available_stock",
+            "key": "available_stock",
             "name": { "pt_BR": "quantidade disponível em estoque", "en": "amount available in stock" },
             "description": {"pt_BR": "A quantidade disponível em estoque do produto","en": "The quantity of available products in stock"},
             "required": false,
