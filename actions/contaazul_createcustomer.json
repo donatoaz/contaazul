@@ -172,62 +172,6 @@
             "field_type": "custom",
             "data_type": "string",
             "max": 20
-        },
-        {
-            "key": "contacts.name",
-            "name": { "pt_BR": "nome do contato", "en": "contact name" },
-            "description": {
-                "pt_BR": "O nome do contato do cliente",
-                "en": "The customer's contact name"
-            },
-            "required": false,
-            "visible": true,
-            "advanced": true,
-            "field_type": "custom",
-            "data_type": "string",
-            "max": 40
-        },
-        {
-            "key": "contacts.business_phone",
-            "name": { "pt_BR": "telefone comercial do contato", "en": "contact business phone" },
-            "description": {
-                "pt_BR": "O telefone comercial do contato do cliente",
-                "en": "The customer's contact business phone"
-            },
-            "required": false,
-            "visible": true,
-            "advanced": true,
-            "field_type": "custom",
-            "data_type": "string",
-            "max": 20
-        },
-        {
-            "key": "contacts.email",
-            "name": { "pt_BR": "email do contato", "en": "contact email" },
-            "description": {
-                "pt_BR": "O email do contato do cliente",
-                "en": "The customer's contact email"
-            },
-            "required": false,
-            "visible": true,
-            "advanced": true,
-            "field_type": "custom",
-            "data_type": "string",
-            "max": 100
-        },
-        {
-            "key": "contacts.job_title",
-            "name": { "pt_BR": "cargo do contato", "en": "contact job title" },
-            "description": {
-                "pt_BR": "O cargo do contato do cliente",
-                "en": "The customer's contact job title"
-            },
-            "required": false,
-            "visible": true,
-            "advanced": true,
-            "field_type": "custom",
-            "data_type": "string",
-            "max": 40
         }
     ]
   },
