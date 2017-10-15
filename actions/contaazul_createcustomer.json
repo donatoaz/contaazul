@@ -172,6 +172,86 @@
             "field_type": "custom",
             "data_type": "string",
             "max": 20
+        },
+        {
+          "key": "address.zip_code",
+          "name": {
+            "pt_BR": "endereço cep",
+            "en": "address zip code"
+          },
+          "description": {
+            "pt_BR": "O cep do endereço do cliente",
+            "en": "The customer's address zip code"
+          },
+          "required": false,
+          "visible": true,
+          "advanced": true,
+          "field_type": "custom",
+          "data_type": "string"
+        },
+        {
+          "key": "address.street",
+          "name":
+            "pt_BR": "endereço rua",
+            "en": "address street"
+          },
+          "description": {
+            "pt_BR": "A rua do endereço do cliente",
+            "en": "The customer's address street"
+          },
+          "required": false,
+          "visible": true,
+          "advanced": true,
+          "field_type": "custom",
+          "data_type": "string"
+        },
+        {
+          "key": "address.number",
+          "name": {
+            "pt_BR": "endereço número",
+            "en": "address number"
+          },
+          "description": {
+            "pt_BR": "O número do endereço do cliente",
+            "en": "The customer's address number"
+          },
+          "required": false,
+          "visible": true,
+          "advanced": true,
+          "field_type": "custom",
+          "data_type": "string"
+        },
+        {
+          "key": "address.complement",
+          "name": {
+            "pt_BR": "endereço complemento",
+            "en": "address complement"
+          },
+          "description": {
+            "pt_BR": "O complemento do endereço do cliente",
+            "en": "The customer's address complement"
+          },
+          "required": false,
+          "visible": true,
+          "advanced": true,
+          "field_type": "custom",
+          "data_type": "string"
+        },
+        {
+          "key": "address.neighborhood",
+          "name": {
+            "pt_BR": "endereço bairro",
+            "en": "address neighborhood"
+          },
+          "description": {
+            "pt_BR": "O bairro do endereço do cliente",
+            "en": "The customer's address neighborhood"
+          },
+          "required": false,
+          "visible": true,
+          "advanced": true,
+          "field_type": "custom",
+          "data_type": "string"
         }
     ]
   },
