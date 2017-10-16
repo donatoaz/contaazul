@@ -191,7 +191,7 @@
         },
         {
           "key": "address.street",
-          "name":
+          "name": {
             "pt_BR": "endereço rua",
             "en": "address street"
           },
