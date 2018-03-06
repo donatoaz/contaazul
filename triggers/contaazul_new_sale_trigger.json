@@ -1,0 +1,214 @@
+{
+  "name": {
+    "pt_BR": "nova venda",
+    "en": "new sale"
+  },
+  "trigger_key": "new_sale",
+  "description": {
+    "pt_br": "Para cada nova venda",
+    "en": "For each new sale"
+  },
+  "trigger_fields": {
+    "type": "local",
+    "fields": [
+      {
+        "key": "id",
+        "name": {
+          "pt_BR": "ID",
+          "en": "ID"
+        },
+        "description": {
+          "pt_BR": "ID",
+          "en": "ID"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "emission",
+        "name": {
+          "pt_BR": "Data/hora de emissão",
+          "en": "Emission date/time"
+        },
+        "description": {
+          "pt_BR": "Data/hora de emissão",
+          "en": "Emission data/time"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "status",
+        "name": {
+          "pt_BR": "Status",
+          "en": "Status"
+        },
+        "description": {
+          "pt_BR": "Status",
+          "en": "Status"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "customer.id",
+        "name": {
+          "pt_BR": "Cliente id",
+          "en": "Customer id"
+        },
+        "description": {
+          "pt_BR": "Cliente id",
+          "en": "Customer id"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "customer.name",
+        "name": {
+          "pt_BR": "Cliente nome",
+          "en": "Customer name"
+        },
+        "description": {
+          "pt_BR": "Cliente nome",
+          "en": "Customer name"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "customer.company_name",
+        "name": {
+          "pt_BR": "Cliente empresa",
+          "en": "Customer company"
+        },
+        "description": {
+          "pt_BR": "Cliente empresa",
+          "en": "Customer company"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "customer.email",
+        "name": {
+          "pt_BR": "Cliente e-mail",
+          "en": "Customer e-mail"
+        },
+        "description": {
+          "pt_BR": "Cliente e-mail",
+          "en": "Customer e-mail"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "customer.person_type",
+        "name": {
+          "pt_BR": "Cliente tipo de pessoa",
+          "en": "Customer person type"
+        },
+        "description": {
+          "pt_BR": "Cliente tipo de pessoa",
+          "en": "Customer person type"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "discount.measure_unit",
+        "name": {
+          "pt_BR": "Disconto unidade de medida",
+          "en": "Discount measure unit"
+        },
+        "description": {
+          "pt_BR": "Disconto unidade de medida",
+          "en": "Discount measure unit"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "discount.rate",
+        "name": {
+          "pt_BR": "Disconto taxa",
+          "en": "Discount rate"
+        },
+        "description": {
+          "pt_BR": "Disconto taxa",
+          "en": "Discount rate"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "payment.type",
+        "name": {
+          "pt_BR": "Pagamento tipo",
+          "en": "Payment type"
+        },
+        "description": {
+          "pt_BR": "Pagamento tipo",
+          "en": "Payment type"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "payment.installments",
+        "name": {
+          "pt_BR": "Pagamento prestações",
+          "en": "Payment installments"
+        },
+        "description": {
+          "pt_BR": "Pagamento prestações",
+          "en": "Payment installments"
+        },
+        "field_type": "string"
+      },
+      {
+        "notes": "notes",
+        "name": {
+          "pt_BR": "Notas",
+          "en": "Notes"
+        },
+        "description": {
+          "pt_BR": "Notas",
+          "en": "Notes"
+        },
+        "field_type": "string"
+      },
+      {
+        "notes": "shipping_cost",
+        "name": {
+          "pt_BR": "Frete",
+          "en": "Shipping cost"
+        },
+        "description": {
+          "pt_BR": "Frete",
+          "en": "Shipping cost"
+        },
+        "field_type": "string"
+      },
+      {
+        "notes": "total",
+        "name": {
+          "pt_BR": "Total",
+          "en": "Total"
+        },
+        "description": {
+          "pt_BR": "Total",
+          "en": "Total"
+        },
+        "field_type": "string"
+      }
+    ]
+  },
+  "trigger_type": "polling",
+  "idempotent": [
+    {
+      "type": "body",
+      "field": "id"
+    }
+  ],
+  "base_created_at_filter": {
+    "field": "emission",
+    "format": "unix_timestamp"
+  },
+  "request": {
+    "method_name": "/sales",
+    "json_api": true,
+    "params": {
+      "size": 100
+    }
+  }
+}
