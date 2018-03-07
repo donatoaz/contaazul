@@ -24,6 +24,18 @@
         "field_type": "string"
       },
       {
+        "key": "status",
+        "name": {
+          "pt_BR": "Status",
+          "en": "Status"
+        },
+        "description": {
+          "pt_BR": "Status",
+          "en": "Status"
+        },
+        "field_type": "string"
+      },
+      {
         "key": "emission",
         "name": {
           "pt_BR": "Data/hora de emissão",
@@ -188,16 +200,14 @@
       "field": "id"
     }
   ],
-  "base_created_at_filter": {
-    "field": "emission",
-    "zone": "London",
-    "end_of_day": true
+  "base_datetime_filter": {
+    "format": "%Y-%m-%dT%H:%M:%S.%LZ"
   },
   "request": {
     "method_name": "/sales",
     "json_api": true,
     "params": {
-      "status": "COMMITTED",
+      "emission_start": "{base_datetime_filter}",
       "size": 100
     }
   }
