@@ -96,14 +96,14 @@
         "field_type": "string"
       },
       {
-        "key": "customer.person_type",
+        "key": "customer.business_phone",
         "name": {
-          "pt_BR": "Cliente tipo de pessoa",
-          "en": "Customer person type"
+          "pt_BR": "Cliente telefone",
+          "en": "Customer phone"
         },
         "description": {
-          "pt_BR": "Cliente tipo de pessoa",
-          "en": "Customer person type"
+          "pt_BR": "Cliente telefone",
+          "en": "Customer phone"
         },
         "field_type": "string"
       },
@@ -116,6 +116,186 @@
         "description": {
           "pt_BR": "Cliente celular",
           "en": "Customer mobile phone"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "customer.person_type",
+        "name": {
+          "pt_BR": "Cliente tipo de pessoa",
+          "en": "Customer person type"
+        },
+        "description": {
+          "pt_BR": "Cliente tipo de pessoa",
+          "en": "Customer person type"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "customer.document",
+        "name": {
+          "pt_BR": "Cliente CPF/CNPJ",
+          "en": "Customer CPF/CNPJ"
+        },
+        "description": {
+          "pt_BR": "Cliente CPF/CNPJ",
+          "en": "Customer CPF/CNPJ"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "customer.identity_document",
+        "name": {
+          "pt_BR": "Cliente RG",
+          "en": "Customer RG"
+        },
+        "description": {
+          "pt_BR": "Cliente RG",
+          "en": "Customer RG"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "customer.state_registration_number",
+        "name": {
+          "pt_BR": "Cliente inscrição estadual",
+          "en": "Customer state registration"
+        },
+        "description": {
+          "pt_BR": "Cliente inscrição estadual",
+          "en": "Customer state registration"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "customer.state_registration_type",
+        "name": {
+          "pt_BR": "Cliente tipo de inscrição estadual",
+          "en": "Customer state registration type"
+        },
+        "description": {
+          "pt_BR": "Cliente tipo de inscrição estadual",
+          "en": "Customer state registration type"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "customer.city_registration",
+        "name": {
+          "pt_BR": "Cliente inscrição municipal",
+          "en": "Customer city registration"
+        },
+        "description": {
+          "pt_BR": "Cliente inscrição municipal",
+          "en": "Customer city registration"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "customer.date_of_birth",
+        "name": {
+          "pt_BR": "Cliente data de nascimento",
+          "en": "Customer date of birth"
+        },
+        "description": {
+          "pt_BR": "Cliente data de nascimento",
+          "en": "Customer date of birth"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "customer.notes",
+        "name": {
+          "pt_BR": "Cliente notas",
+          "en": "Customer notes"
+        },
+        "description": {
+          "pt_BR": "Cliente notas",
+          "en": "Customer notes"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "customer.address.street",
+        "name": {
+          "pt_BR": "Cliente endereço (rua)",
+          "en": "Customer address (street)"
+        },
+        "description": {
+          "pt_BR": "Cliente endereço (rua)",
+          "en": "Customer address (street)"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "customer.address.number",
+        "name": {
+          "pt_BR": "Cliente endereço (número)",
+          "en": "Customer address (number)"
+        },
+        "description": {
+          "pt_BR": "Cliente endereço (número)",
+          "en": "Customer address (number)"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "customer.address.complement",
+        "name": {
+          "pt_BR": "Cliente endereço (complemento)",
+          "en": "Customer address (complement)"
+        },
+        "description": {
+          "pt_BR": "Cliente endereço (complemento)",
+          "en": "Customer address (complement)"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "customer.address.zip_code",
+        "name": {
+          "pt_BR": "Cliente endereço (cep)",
+          "en": "Customer address (zip code)"
+        },
+        "description": {
+          "pt_BR": "Cliente endereço (cep)",
+          "en": "Customer address (zip code)"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "customer.address.neighborhood",
+        "name": {
+          "pt_BR": "Cliente endereço (bairro)",
+          "en": "Customer address (neighborhood)"
+        },
+        "description": {
+          "pt_BR": "Cliente endereço (bairro)",
+          "en": "Customer address (neighborhood)"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "customer.address.city.name",
+        "name": {
+          "pt_BR": "Cliente cidade",
+          "en": "Customer city"
+        },
+        "description": {
+          "pt_BR": "Cliente cidade",
+          "en": "Customer city"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "customer.address.state.name",
+        "name": {
+          "pt_BR": "Cliente estado",
+          "en": "Customer state"
+        },
+        "description": {
+          "pt_BR": "Cliente estado",
+          "en": "Customer state"
         },
         "field_type": "string"
       },
