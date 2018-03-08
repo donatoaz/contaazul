@@ -108,6 +108,18 @@
         "field_type": "string"
       },
       {
+        "key": "customer.mobile_phone",
+        "name": {
+          "pt_BR": "Cliente celular",
+          "en": "Customer mobile phone"
+        },
+        "description": {
+          "pt_BR": "Cliente celular",
+          "en": "Customer mobile phone"
+        },
+        "field_type": "string"
+      },
+      {
         "key": "discount.measure_unit",
         "name": {
           "pt_BR": "Disconto unidade de medida",
@@ -156,7 +168,7 @@
         "field_type": "string"
       },
       {
-        "notes": "notes",
+        "key": "notes",
         "name": {
           "pt_BR": "Notas",
           "en": "Notes"
@@ -168,7 +180,7 @@
         "field_type": "string"
       },
       {
-        "notes": "shipping_cost",
+        "key": "shipping_cost",
         "name": {
           "pt_BR": "Frete",
           "en": "Shipping cost"
@@ -180,7 +192,7 @@
         "field_type": "string"
       },
       {
-        "notes": "total",
+        "key": "total",
         "name": {
           "pt_BR": "Total",
           "en": "Total"
@@ -209,6 +221,12 @@
     "params": {
       "emission_start": "{base_datetime_filter}",
       "size": 100
-    }
+    },
+    "additional_resources": [
+      {
+        "method": "/customers/",
+        "name": "customer"
+      }
+    ]
   }
 }
