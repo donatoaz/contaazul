@@ -1,0 +1,51 @@
+{
+	"name": {
+    "pt_BR": "Criar uma nova venda",
+    "en": "Create a new sale"
+  },
+  "action_key": "create_sale",
+  "description": {
+  	"pt_BR": "Criar uma nova venda",
+    "en": "Create a new sale"
+  },
+  "action_fields": {
+    "fields": [
+        {
+            "key": "name",
+            "name": { "pt_BR": "nome", "en": "name" },
+            "description": {"pt_BR": "O nome da venda","en": "The name of the sale"},
+            "required": true,
+            "visible": true,
+            "advanced": false,
+            "field_type": "string",
+            "data_type": "string",
+            "max": 100
+        },
+        {
+            "key": "value",
+            "name": { "pt_BR": "valor", "en": "value" },
+            "description": {"pt_BR": "O valor de venda da venda","en": "The sell value of the sale"},
+            "required": true,
+            "visible": true,
+            "advanced": false,
+            "field_type": "integer",
+            "data_type": "decimal"
+        },
+        {
+            "key": "cost",
+            "name": { "pt_BR": "custo", "en": "cost" },
+            "description": {"pt_BR": "O valor de custo da venda","en": "The cost value of the sale"},
+            "required": true,
+            "visible": true,
+            "advanced": false,
+            "field_type": "integer",
+            "data_type": "decimal"
+        }
+    ]
+  },
+  "request": {
+    "method_name": "/sales",
+    "json_api": true,
+    "error_fields" : ["message"]
+  }
+}
