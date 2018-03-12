@@ -30,8 +30,9 @@
       },
       {
         "key": "status",
-        "name": { "pt_BR": "Status", "en": "Status" },
+        "label": { "pt_BR": "Status", "en": "Status" },
         "description": { "pt_BR": "Status da venda", "en": "Sale status"},
+        "placeholder": { "pt_BR": "Status da venda", "en": "Sale status"},
         "required": true,
         "visible": true,
         "field_type": "dropdown",
@@ -81,8 +82,9 @@
       },
       {
         "key": "customer.person_type",
-        "name": {"pt_BR": "Tipo de pessoa do cliente", "en": "Customer person type"},
+        "label": {"pt_BR": "Tipo de pessoa do cliente", "en": "Customer person type"},
         "description": {"pt_BR": "Tipo de pessoa do cliente da venda", "en": "Sale customer person type"},
+        "placeholder": {"pt_BR": "Tipo de pessoa do cliente da venda", "en": "Sale customer person type"},
         "required": true,
         "visible": true,
         "field_type": "dropdown",
@@ -140,22 +142,23 @@
         "field_type": "custom",
         "data_type": "string"
       },
-      {
-        "key": "products",
-        "name": { "pt_BR": "Produtos", "en": "Products" },
-        "description": { "pt_BR": "Produtos da venda", "en": "Sale products" },
-        "field_type": "array"
-      },
-      {
-        "key": "services",
-        "name": { "pt_BR": "Serviços", "en": "Services" },
-        "description": { "pt_BR": "Serviços da venda", "en": "Sale services" },
-        "field_type": "array"
-      },
+      // {
+      //   "key": "products",
+      //   "name": { "pt_BR": "Produtos", "en": "Products" },
+      //   "description": { "pt_BR": "Produtos da venda", "en": "Sale products" },
+      //   "field_type": "array"
+      // },
+      // {
+      //   "key": "services",
+      //   "name": { "pt_BR": "Serviços", "en": "Services" },
+      //   "description": { "pt_BR": "Serviços da venda", "en": "Sale services" },
+      //   "field_type": "array"
+      // },
       {
         "key": "discount.measure_unit",
-        "name": {"pt_BR": "Unidade de medida do disconto", "en": "Discount measure unit"},
+        "label": {"pt_BR": "Unidade de medida do disconto", "en": "Discount measure unit"},
         "description": {"pt_BR": "Unidade de medida do disconto da venda", "en": "Sale discount measure unit"},
+        "placeholder": {"pt_BR": "Unidade de medida do disconto da venda", "en": "Sale discount measure unit"},
         "visible": true,
         "field_type": "dropdown",
         "data_type": "string",
@@ -177,8 +180,9 @@
       },
       {
         "key": "payment.type",
-        "name": {"pt_BR": "Tipo do pagamento", "en": "Payment type"},
+        "label": {"pt_BR": "Tipo do pagamento", "en": "Payment type"},
         "description": {"pt_BR": "Tipo do pagamento da venda", "en": "Sale payment type"},
+        "placeholder": {"pt_BR": "Tipo do pagamento da venda", "en": "Sale payment type"},
         "required": true,
         "visible": true,
         "field_type": "dropdown",
@@ -191,12 +195,12 @@
           ]
         }
       },
-      {
-        "key": "payment.installments",
-        "name": {"pt_BR": "Prestações do pagamento", "en": "Payment installments"},
-        "description": {"pt_BR": "Prestações do pagamento da venda", "en": "Sale payment installments"},
-        "field_type": "array"
-      },
+      // {
+      //   "key": "payment.installments",
+      //   "name": {"pt_BR": "Prestações do pagamento", "en": "Payment installments"},
+      //   "description": {"pt_BR": "Prestações do pagamento da venda", "en": "Sale payment installments"},
+      //   "field_type": "array"
+      // },
       {
         "key": "notes",
         "name": {"pt_BR": "Notas", "en": "Notes"},
@@ -226,6 +230,7 @@
           "request": {
             "verb": "get",
             "method_name": "/customers",
+            "json_api": true,
             "params": [
               {"field": "document", "value": "{customer.document}", "type": "string"},
               {"field": "size", "value": 1, "type": "integer"}
@@ -240,10 +245,12 @@
           "request": {
             "verb": "post",
             "method_name": "/customers",
+            "json_api": true,
             "params": [
               {"field": "name", "value": "{customer.name}", "type": "string"},
               {"field": "email", "value": "{customer.email}", "type": "string"},
-              {"field": "document", "value": "{customer.document}", "type": "string"}
+              {"field": "document", "value": "{customer.document}", "type": "string"},
+              {"field": "person_type", "value": "{customer.person_type}", "type": "string"}
             ]
           }
         }
