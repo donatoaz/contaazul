@@ -10,42 +10,247 @@
   },
   "action_fields": {
     "fields": [
-        {
-            "key": "name",
-            "name": { "pt_BR": "nome", "en": "name" },
-            "description": {"pt_BR": "O nome da venda","en": "The name of the sale"},
-            "required": true,
-            "visible": true,
-            "advanced": false,
-            "field_type": "string",
-            "data_type": "string",
-            "max": 100
-        },
-        {
-            "key": "value",
-            "name": { "pt_BR": "valor", "en": "value" },
-            "description": {"pt_BR": "O valor de venda da venda","en": "The sell value of the sale"},
-            "required": true,
-            "visible": true,
-            "advanced": false,
-            "field_type": "integer",
-            "data_type": "decimal"
-        },
-        {
-            "key": "cost",
-            "name": { "pt_BR": "custo", "en": "cost" },
-            "description": {"pt_BR": "O valor de custo da venda","en": "The cost value of the sale"},
-            "required": true,
-            "visible": true,
-            "advanced": false,
-            "field_type": "integer",
-            "data_type": "decimal"
+      {
+        "key": "number",
+        "name": { "pt_BR": "Número", "en": "Number" },
+        "description": { "pt_BR": "Número da venda", "en": "Sale number"},
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "integer"
+      },
+      {
+        "key": "emission",
+        "name": { "pt_BR": "Data/hora de emissão", "en": "Emission data/time" },
+        "description": { "pt_BR": "Data/hora de emissão da venda", "en": "Sale emission date/time"},
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "datetime",
+        "date_format": "%Y-%m-%dT%H:%M:%S.%LZ"
+      },
+      {
+        "key": "status",
+        "name": { "pt_BR": "Status", "en": "Status" },
+        "description": { "pt_BR": "Status da venda", "en": "Sale status"},
+        "required": true,
+        "visible": true,
+        "field_type": "dropdown",
+        "data_type": "string",
+        "list": {
+          "type" : "local",
+          "data": [
+            {"label": "Revisão pendente", "value": "PENDING"},
+            {"label": "Venda", "value": "COMMITTED"},
+            {"label": "Cancelado", "value": "CANCELED"}
+          ]
         }
+      },
+      {
+        "key": "customer_id",
+        "name": {"pt_BR": "ID do cliente", "en": "Customer ID"},
+        "description": {"pt_BR": "ID do cliente da venda", "en": "Sale customer ID"},
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "customer.name",
+        "name": {"pt_BR": "Nome do cliente", "en": "Customer name"},
+        "description": {"pt_BR": "Nome do cliente da venda", "en": "Sale customer name"},
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "customer.email",
+        "name": {"pt_BR": "E-mail do cliente", "en": "Customer e-mail"},
+        "description": {"pt_BR": "E-mail do cliente da venda", "en": "Sale customer e-mail"},
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "customer.document",
+        "name": {"pt_BR": "CPF/CNPJ do cliente", "en": "Customer document"},
+        "description": {"pt_BR": "CPF/CNPJ do cliente da venda", "en": "Sale customer document"},
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "customer.person_type",
+        "name": {"pt_BR": "Tipo de pessoa do cliente", "en": "Customer person type"},
+        "description": {"pt_BR": "Tipo de pessoa do cliente da venda", "en": "Sale customer person type"},
+        "required": true,
+        "visible": true,
+        "field_type": "dropdown",
+        "data_type": "string",
+        "list": {
+          "type" : "local",
+          "data": [
+            {"label": "Pessoa física", "value": "NATURAL"},
+            {"label": "Pessoa jurídica", "value": "LEGAL"}
+          ]
+        }
+      },
+      {
+        "key": "customer.business_phone",
+        "name": {"pt_BR": "Telefone do cliente", "en": "Customer phone"},
+        "description": {"pt_BR": "Telefone do cliente da venda", "en": "Sale customer phone"},
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "customer.address.street",
+        "name": {"pt_BR": "Rua do endereço do cliente", "en": "Customer address street"},
+        "description": {"pt_BR": "Rua do endereço do cliente da venda", "en": "Sale customer address street"},
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "customer.address.number",
+        "name": {"pt_BR": "Número do endereço do cliente", "en": "Customer address number"},
+        "description": {"pt_BR": "Número do endereço do cliente da venda", "en": "Sale customer address number"},
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "customer.address.zip_code",
+        "name": {"pt_BR": "CEP do endereço do cliente", "en": "Customer address zip code"},
+        "description": {"pt_BR": "CEP do endereço do cliente da venda", "en": "Sale customer address zip code"},
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "customer.address.neighborhood",
+        "name": {"pt_BR": "Bairro do endereço do cliente", "en": "Customer address neighborhood"},
+        "description": {"pt_BR": "Bairro do endereço do cliente da venda", "en": "Sale customer address neighborhood"},
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "products",
+        "name": { "pt_BR": "Produtos", "en": "Products" },
+        "description": { "pt_BR": "Produtos da venda", "en": "Sale products" },
+        "field_type": "array"
+      },
+      {
+        "key": "services",
+        "name": { "pt_BR": "Serviços", "en": "Services" },
+        "description": { "pt_BR": "Serviços da venda", "en": "Sale services" },
+        "field_type": "array"
+      },
+      {
+        "key": "discount.measure_unit",
+        "name": {"pt_BR": "Unidade de medida do disconto", "en": "Discount measure unit"},
+        "description": {"pt_BR": "Unidade de medida do disconto da venda", "en": "Sale discount measure unit"},
+        "visible": true,
+        "field_type": "dropdown",
+        "data_type": "string",
+        "list": {
+          "type" : "local",
+          "data": [
+            {"label": "Porcentagem", "value": "PERCENT"},
+            {"label": "Valor", "value": "VALUE"}
+          ]
+        }
+      },
+      {
+        "key": "discount.rate",
+        "name": {"pt_BR": "Taxa do disconto", "en": "Discount rate"},
+        "description": {"pt_BR": "Taxa do disconto da venda", "en": "Sale discount rate"},
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "decimal"
+      },
+      {
+        "key": "payment.type",
+        "name": {"pt_BR": "Tipo do pagamento", "en": "Payment type"},
+        "description": {"pt_BR": "Tipo do pagamento da venda", "en": "Sale payment type"},
+        "required": true,
+        "visible": true,
+        "field_type": "dropdown",
+        "data_type": "string",
+        "list": {
+          "type" : "local",
+          "data": [
+            {"label": "Pagamento á vista", "value": "CASH"},
+            {"label": "Pagamento parcelado", "value": "TIMES"}
+          ]
+        }
+      },
+      {
+        "key": "payment.installments",
+        "name": {"pt_BR": "Prestações do pagamento", "en": "Payment installments"},
+        "description": {"pt_BR": "Prestações do pagamento da venda", "en": "Sale payment installments"},
+        "field_type": "array"
+      },
+      {
+        "key": "notes",
+        "name": {"pt_BR": "Notas", "en": "Notes"},
+        "description": {"pt_BR": "Notas da venda", "en": "Sale notes"},
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "shipping_cost",
+        "name": {"pt_BR": "Frete", "en": "Shipping cost"},
+        "description": {"pt_BR": "Frete da venda", "en": "Sale shipping cost"},
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "decimal"
+      }
     ]
   },
   "request": {
     "method_name": "/sales",
     "json_api": true,
-    "error_fields" : ["message"]
+    "error_fields" : ["message"],
+    "pre_hooks": {
+      "hooks": [
+        {
+          "name": "Buscar cliente",
+          "request": {
+            "verb": "get",
+            "method_name": "/customers",
+            "params": [
+              {"field": "document", "value": "{customer.document}", "type": "string"},
+              {"field": "size", "value": 1, "type": "integer"}
+            ]
+          }
+        },
+        {
+          "name": "Criar cliente",
+          "conditions": [[
+            {"field": "id", "condition": "equal", "value": null}
+          ]],
+          "request": {
+            "verb": "post",
+            "method_name": "/customers",
+            "params": [
+              {"field": "name", "value": "{customer.name}", "type": "string"},
+              {"field": "email", "value": "{customer.email}", "type": "string"},
+              {"field": "document", "value": "{customer.document}", "type": "string"}
+            ]
+          }
+        }
+      ],
+      "append_fields": [
+        {"field": "customer_id", "value": "{id}", "type": "string"}
+      ]
+    }
   }
 }
