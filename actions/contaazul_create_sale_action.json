@@ -142,12 +142,12 @@
         "field_type": "custom",
         "data_type": "string"
       },
-      // {
-      //   "key": "products",
-      //   "name": { "pt_BR": "Produtos", "en": "Products" },
-      //   "description": { "pt_BR": "Produtos da venda", "en": "Sale products" },
-      //   "field_type": "array"
-      // },
+      {
+        "key": "products",
+        "name": { "pt_BR": "Produtos", "en": "Products" },
+        "description": { "pt_BR": "Produtos da venda", "en": "Sale products" },
+        "field_type": "array"
+      },
       // {
       //   "key": "services",
       //   "name": { "pt_BR": "Serviços", "en": "Services" },
@@ -222,6 +222,9 @@
   "request": {
     "method_name": "/sales",
     "json_api": true,
+    "custom_params": [
+      {"name": "payment", "value": "{installments: []}"}
+    ],
     "error_fields" : ["message"],
     "pre_hooks": {
       "hooks": [
