@@ -3,7 +3,7 @@
     "pt_BR": "Criar uma nova venda",
     "en": "Create a new sale"
   },
-  "action_key": "create_sale",
+  "action_key": "create_sale_single_item",
   "description": {
   	"pt_BR": "Criar uma nova venda",
     "en": "Create a new sale"
@@ -143,17 +143,49 @@
         "data_type": "string"
       },
       {
-        "key": "products",
-        "name": { "pt_BR": "Produtos", "en": "Products" },
-        "description": { "pt_BR": "Produtos da venda", "en": "Sale products" },
-        "field_type": "array"
+        "key": "item_type",
+        "label": {"pt_BR": "Tipo de item", "en": "Item type"},
+        "description": {"pt_BR": "Tipo de item da venda", "en": "Sale item type"},
+        "placeholder": {"pt_BR": "Tipo de item da venda", "en": "Sale item type"},
+        "required": true,
+        "visible": true,
+        "field_type": "dropdown",
+        "data_type": "string",
+        "list": {
+          "type" : "local",
+          "data": [
+            {"label": "Produto", "value": "PRODUCT"},
+            {"label": "Serviço", "value": "SERVICE"}
+          ]
+        }
       },
-      // {
-      //   "key": "services",
-      //   "name": { "pt_BR": "Serviços", "en": "Services" },
-      //   "description": { "pt_BR": "Serviços da venda", "en": "Sale services" },
-      //   "field_type": "array"
-      // },
+      {
+        "key": "item.description",
+        "name": { "pt_BR": "Descrição do item", "en": "Item description" },
+        "description": { "pt_BR": "Descrição do item da venda", "en": "Sale item description" },
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "item.quantity",
+        "name": { "pt_BR": "Quantidade do item", "en": "Item quantity" },
+        "description": { "pt_BR": "Quantidade do item da venda", "en": "Sale item quantity" },
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "integer"
+      },
+      {
+        "key": "item.value",
+        "name": { "pt_BR": "Valor do item", "en": "Item value" },
+        "description": { "pt_BR": "Valor do item da venda", "en": "Sale item value" },
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "decimal"
+      },
       {
         "key": "discount.measure_unit",
         "label": {"pt_BR": "Unidade de medida do disconto", "en": "Discount measure unit"},
@@ -179,29 +211,6 @@
         "data_type": "decimal"
       },
       {
-        "key": "payment.type",
-        "label": {"pt_BR": "Tipo do pagamento", "en": "Payment type"},
-        "description": {"pt_BR": "Tipo do pagamento da venda", "en": "Sale payment type"},
-        "placeholder": {"pt_BR": "Tipo do pagamento da venda", "en": "Sale payment type"},
-        "required": true,
-        "visible": true,
-        "field_type": "dropdown",
-        "data_type": "string",
-        "list": {
-          "type" : "local",
-          "data": [
-            {"label": "Pagamento á vista", "value": "CASH"},
-            {"label": "Pagamento parcelado", "value": "TIMES"}
-          ]
-        }
-      },
-      // {
-      //   "key": "payment.installments",
-      //   "name": {"pt_BR": "Prestações do pagamento", "en": "Payment installments"},
-      //   "description": {"pt_BR": "Prestações do pagamento da venda", "en": "Sale payment installments"},
-      //   "field_type": "array"
-      // },
-      {
         "key": "notes",
         "name": {"pt_BR": "Notas", "en": "Notes"},
         "description": {"pt_BR": "Notas da venda", "en": "Sale notes"},
@@ -216,6 +225,15 @@
         "visible": true,
         "field_type": "custom",
         "data_type": "decimal"
+      },
+      {
+        "key": "products"
+      },
+      {
+        "key": "services"
+      },
+      {
+        "key": "payment"
       }
     ]
   },
@@ -223,7 +241,9 @@
     "method_name": "/sales",
     "json_api": true,
     "custom_params": [
-      {"name": "payment", "value": "{installments: []}"}
+      {"name": "payment", "value": "{type: %Q(CASH), installments: [{number: 0, value: data[:item][:value]*data[:item][:quantity], due_date: data[:emission], status: %Q(ACQUITTED)}]}"},
+      {"name": "products", "value": "data[:item_type] == %Q(PRODUCT) ? [data[:item]] : []"},
+      {"name": "services", "value": "data[:item_type] == %Q(SERVICE) ? [data[:item]] : []"}
     ],
     "error_fields" : ["message"],
     "pre_hooks": {
