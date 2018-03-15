@@ -1,19 +1,19 @@
 {
   "name": {
-    "pt_BR": "Criar uma nova venda",
-    "en": "Create a new sale"
+    "pt_BR": "Criar um novo contrato",
+    "en": "Create a new contract"
   },
-  "action_key": "create_sale_multi_items",
+  "action_key": "create_contract_multi_items",
   "description": {
-    "pt_BR": "Criar uma nova venda",
-    "en": "Create a new sale"
+    "pt_BR": "Criar um novo contrato",
+    "en": "Create a new contract"
   },
   "action_fields": {
     "fields": [
       {
         "key": "number",
         "name": { "pt_BR": "Número", "en": "Number" },
-        "description": { "pt_BR": "Número da venda", "en": "Sale number"},
+        "description": { "pt_BR": "Número do contrato", "en": "Contract number"},
         "visible": true,
         "field_type": "custom",
         "data_type": "integer"
@@ -21,7 +21,7 @@
       {
         "key": "emission",
         "name": { "pt_BR": "Data/hora de emissão", "en": "Emission data/time" },
-        "description": { "pt_BR": "Data/hora de emissão da venda", "en": "Sale emission date/time"},
+        "description": { "pt_BR": "Data/hora de emissão do contrato", "en": "Contract emission date/time"},
         "required": true,
         "visible": true,
         "field_type": "custom",
@@ -31,8 +31,8 @@
       {
         "key": "status",
         "label": { "pt_BR": "Status", "en": "Status" },
-        "description": { "pt_BR": "Status da venda", "en": "Sale status"},
-        "placeholder": { "pt_BR": "Status da venda", "en": "Sale status"},
+        "description": { "pt_BR": "Status do contrato", "en": "Contract status"},
+        "placeholder": { "pt_BR": "Status do contrato", "en": "Contract status"},
         "required": true,
         "visible": true,
         "field_type": "dropdown",
@@ -49,14 +49,14 @@
       {
         "key": "customer_id",
         "name": {"pt_BR": "ID do cliente", "en": "Customer ID"},
-        "description": {"pt_BR": "ID do cliente da venda", "en": "Sale customer ID"},
+        "description": {"pt_BR": "ID do cliente do contrato", "en": "Contract customer ID"},
         "field_type": "custom",
         "data_type": "string"
       },
       {
         "key": "customer.name",
         "name": {"pt_BR": "Nome do cliente", "en": "Customer name"},
-        "description": {"pt_BR": "Nome do cliente da venda", "en": "Sale customer name"},
+        "description": {"pt_BR": "Nome do cliente do contrato", "en": "Contract customer name"},
         "required": true,
         "visible": true,
         "field_type": "custom",
@@ -65,7 +65,7 @@
       {
         "key": "customer.email",
         "name": {"pt_BR": "E-mail do cliente", "en": "Customer e-mail"},
-        "description": {"pt_BR": "E-mail do cliente da venda", "en": "Sale customer e-mail"},
+        "description": {"pt_BR": "E-mail do cliente do contrato", "en": "Contract customer e-mail"},
         "required": true,
         "visible": true,
         "field_type": "custom",
@@ -74,7 +74,7 @@
       {
         "key": "customer.document",
         "name": {"pt_BR": "CPF/CNPJ do cliente", "en": "Customer document"},
-        "description": {"pt_BR": "CPF/CNPJ do cliente da venda", "en": "Sale customer document"},
+        "description": {"pt_BR": "CPF/CNPJ do cliente do contrato", "en": "Contract customer document"},
         "visible": true,
         "field_type": "custom",
         "data_type": "string"
@@ -82,8 +82,8 @@
       {
         "key": "customer.person_type",
         "label": {"pt_BR": "Tipo de pessoa do cliente", "en": "Customer person type"},
-        "description": {"pt_BR": "Tipo de pessoa do cliente da venda", "en": "Sale customer person type"},
-        "placeholder": {"pt_BR": "Tipo de pessoa do cliente da venda", "en": "Sale customer person type"},
+        "description": {"pt_BR": "Tipo de pessoa do cliente do contrato", "en": "Contract customer person type"},
+        "placeholder": {"pt_BR": "Tipo de pessoa do cliente do contrato", "en": "Contract customer person type"},
         "required": true,
         "visible": true,
         "field_type": "dropdown",
@@ -99,7 +99,7 @@
       {
         "key": "customer.business_phone",
         "name": {"pt_BR": "Telefone do cliente", "en": "Customer phone"},
-        "description": {"pt_BR": "Telefone do cliente da venda", "en": "Sale customer phone"},
+        "description": {"pt_BR": "Telefone do cliente do contrato", "en": "Contract customer phone"},
         "required": true,
         "visible": true,
         "field_type": "custom",
@@ -108,8 +108,8 @@
       {
         "key": "item_types",
         "label": {"pt_BR": "Tipos de item", "en": "Item types"},
-        "description": {"pt_BR": "Tipos de item da venda", "en": "Sale item types"},
-        "placeholder": {"pt_BR": "Tipos de item da venda", "en": "Sale item types"},
+        "description": {"pt_BR": "Tipos de item do contrato", "en": "Contract item types"},
+        "placeholder": {"pt_BR": "Tipos de item do contrato", "en": "Contract item types"},
         "required": true,
         "visible": true,
         "field_type": "dropdown",
@@ -125,14 +125,14 @@
       {
         "key": "items",
         "name": { "pt_BR": "Itens", "en": "Items" },
-        "description": { "pt_BR": "Itens da venda", "en": "Sale items" },
+        "description": { "pt_BR": "Itens do contrato", "en": "Contract items" },
         "field_type": "array"
       },
       {
         "key": "discount.measure_unit",
         "label": {"pt_BR": "Unidade de medida do disconto", "en": "Discount measure unit"},
-        "description": {"pt_BR": "Unidade de medida do disconto da venda", "en": "Sale discount measure unit"},
-        "placeholder": {"pt_BR": "Unidade de medida do disconto da venda", "en": "Sale discount measure unit"},
+        "description": {"pt_BR": "Unidade de medida do disconto do contrato", "en": "Contract discount measure unit"},
+        "placeholder": {"pt_BR": "Unidade de medida do disconto do contrato", "en": "Contract discount measure unit"},
         "visible": true,
         "field_type": "dropdown",
         "data_type": "string",
@@ -147,15 +147,32 @@
       {
         "key": "discount.rate",
         "name": {"pt_BR": "Taxa do disconto", "en": "Discount rate"},
-        "description": {"pt_BR": "Taxa do disconto da venda", "en": "Sale discount rate"},
+        "description": {"pt_BR": "Taxa do disconto do contrato", "en": "Contract discount rate"},
         "visible": true,
         "field_type": "custom",
         "data_type": "decimal"
       },
       {
+        "key": "due_day",
+        "name": {"pt_BR": "Dia do vencimento", "en": "Due day"},
+        "description": {"pt_BR": "Dia do vencimento do contrato", "en": "Contract notes due day"},
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "integer"
+      },
+      {
+        "key": "duration",
+        "name": {"pt_BR": "Duração", "en": "Duration"},
+        "description": {"pt_BR": "Duração do contrato", "en": "Contract notes duration"},
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "integer"
+      },
+      {
         "key": "notes",
         "name": {"pt_BR": "Notas", "en": "Notes"},
-        "description": {"pt_BR": "Notas da venda", "en": "Sale notes"},
+        "description": {"pt_BR": "Notas do contrato", "en": "Contract notes"},
         "visible": true,
         "field_type": "custom",
         "data_type": "string"
@@ -163,7 +180,7 @@
       {
         "key": "shipping_cost",
         "name": {"pt_BR": "Frete", "en": "Shipping cost"},
-        "description": {"pt_BR": "Frete da venda", "en": "Sale shipping cost"},
+        "description": {"pt_BR": "Frete do contrato", "en": "Contract shipping cost"},
         "visible": true,
         "field_type": "custom",
         "data_type": "decimal"
@@ -173,17 +190,13 @@
       },
       {
         "key": "services"
-      },
-      {
-        "key": "payment"
       }
     ]
   },
   "request": {
-    "method_name": "/sales",
+    "method_name": "/contracts",
     "json_api": true,
     "custom_params": [
-      {"name": "payment", "value": "{type: %Q(CASH), installments: [{number: 0, value: data[:item][:value]*data[:item][:quantity], due_date: data[:emission], status: %Q(ACQUITTED)}]}"},
       {"name": "products", "value": "data[:item_types] == %Q(PRODUCTS) ? data[:items] : []"},
       {"name": "services", "value": "data[:item_types] == %Q(SERVICES) ? data[:items] : []"}
     ],
@@ -198,7 +211,7 @@
             "json_api": true,
             "params": [
               {"field": "name", "value": "data[:customer][:document].blank? ? data[:customer][:name] : %Q()", "custom": true},
-              {"field": "document", "value": "{customer.document}", "type": "string"},
+              {"field": "document", "value": "{customer.document}", "type": "string", "custom": true},
               {"field": "size", "value": 1, "type": "integer"}
             ]
           }

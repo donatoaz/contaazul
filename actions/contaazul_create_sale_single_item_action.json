@@ -75,7 +75,6 @@
         "key": "customer.document",
         "name": {"pt_BR": "CPF/CNPJ do cliente", "en": "Customer document"},
         "description": {"pt_BR": "CPF/CNPJ do cliente da venda", "en": "Sale customer document"},
-        "required": true,
         "visible": true,
         "field_type": "custom",
         "data_type": "string"
@@ -101,42 +100,6 @@
         "key": "customer.business_phone",
         "name": {"pt_BR": "Telefone do cliente", "en": "Customer phone"},
         "description": {"pt_BR": "Telefone do cliente da venda", "en": "Sale customer phone"},
-        "required": true,
-        "visible": true,
-        "field_type": "custom",
-        "data_type": "string"
-      },
-      {
-        "key": "customer.address.street",
-        "name": {"pt_BR": "Rua do endereço do cliente", "en": "Customer address street"},
-        "description": {"pt_BR": "Rua do endereço do cliente da venda", "en": "Sale customer address street"},
-        "required": true,
-        "visible": true,
-        "field_type": "custom",
-        "data_type": "string"
-      },
-      {
-        "key": "customer.address.number",
-        "name": {"pt_BR": "Número do endereço do cliente", "en": "Customer address number"},
-        "description": {"pt_BR": "Número do endereço do cliente da venda", "en": "Sale customer address number"},
-        "required": true,
-        "visible": true,
-        "field_type": "custom",
-        "data_type": "string"
-      },
-      {
-        "key": "customer.address.zip_code",
-        "name": {"pt_BR": "CEP do endereço do cliente", "en": "Customer address zip code"},
-        "description": {"pt_BR": "CEP do endereço do cliente da venda", "en": "Sale customer address zip code"},
-        "required": true,
-        "visible": true,
-        "field_type": "custom",
-        "data_type": "string"
-      },
-      {
-        "key": "customer.address.neighborhood",
-        "name": {"pt_BR": "Bairro do endereço do cliente", "en": "Customer address neighborhood"},
-        "description": {"pt_BR": "Bairro do endereço do cliente da venda", "en": "Sale customer address neighborhood"},
         "required": true,
         "visible": true,
         "field_type": "custom",
@@ -255,6 +218,7 @@
             "method_name": "/customers",
             "json_api": true,
             "params": [
+              {"field": "name", "value": "data[:customer][:document].blank? ? data[:customer][:name] : %Q()", "custom": true},
               {"field": "document", "value": "{customer.document}", "type": "string"},
               {"field": "size", "value": 1, "type": "integer"}
             ]
@@ -273,7 +237,8 @@
               {"field": "name", "value": "{customer.name}", "type": "string"},
               {"field": "email", "value": "{customer.email}", "type": "string"},
               {"field": "document", "value": "{customer.document}", "type": "string"},
-              {"field": "person_type", "value": "{customer.person_type}", "type": "string"}
+              {"field": "person_type", "value": "{customer.person_type}", "type": "string"},
+              {"field": "business_phone", "value": "{customer.business_phone}", "type": "string"}
             ]
           }
         }
