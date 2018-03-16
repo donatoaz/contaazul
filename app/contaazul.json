@@ -23,7 +23,7 @@
       "authorize_url": "https://api.contaazul.com/auth/authorize",
       "access_token_url": "https://api.contaazul.com/oauth2/token",
       "refresh_token_url": "https://api.contaazul.com/oauth2/token",
-      "redirect_uri": "https://homologdotmanagedot.pluga.co/oauth2/conta_azul",
+      "redirect_uri": "https://manage.pluga.co/oauth2/conta_azul",
       "access_token_placement": "header_bearer",
       "scope": [],
       "response_type": "code"

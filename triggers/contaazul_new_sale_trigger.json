@@ -1,0 +1,209 @@
+{
+  "name": {
+    "pt_BR": "nova venda",
+    "en": "new sale"
+  },
+  "trigger_key": "new_sale",
+  "description": {
+    "pt_br": "Para cada nova venda",
+    "en": "For each new sale"
+  },
+  "trigger_fields": {
+    "type": "local",
+    "fields": [
+      {
+        "key": "id",
+        "name": {"pt_BR": "ID", "en": "ID"},
+        "description": {"pt_BR": "ID da venda", "en": "Sale ID"}
+      },
+      {
+        "key": "status",
+        "name": {"pt_BR": "Status", "en": "Status"},
+        "description": {"pt_BR": "Status da venda", "en": "Sale status"}
+      },
+      {
+        "key": "emission",
+        "source": "format_date(source[:emission],%q(%d/%m/%Y %H:%M:%S))",
+        "force_source": true,
+        "name": {"pt_BR": "Data/hora de emissão", "en": "Emission date/time"},
+        "description": {"pt_BR": "Data/hora de emissão da venda", "en": "Sale emission date/time"}
+      },
+      {
+        "key": "customer.id",
+        "name": {"pt_BR": "ID do cliente", "en": "Customer ID"},
+        "description": {"pt_BR": "ID do cliente da venda", "en": "Sale customer ID"}
+      },
+      {
+        "key": "customer.name",
+        "name": {"pt_BR": "Nome do cliente", "en": "Customer name"},
+        "description": {"pt_BR": "Nome do cliente da venda", "en": "Sale customer name"}
+      },
+      {
+        "key": "customer.company_name",
+        "name": {"pt_BR": "Empresa do cliente", "en": "Customer company"},
+        "description": {"pt_BR": "Empresa do cliente da venda", "en": "Sale customer company"}
+      },
+      {
+        "key": "customer.email",
+        "name": {"pt_BR": "E-mail do cliente", "en": "Customer e-mail"},
+        "description": {"pt_BR": "E-mail do cliente da venda", "en": "Sale customer e-mail"}
+      },
+      {
+        "key": "customer.business_phone",
+        "name": {"pt_BR": "Telefone do cliente", "en": "Customer phone"},
+        "description": {"pt_BR": "Telefone do cliente da venda", "en": "Sale customer phone"}
+      },
+      {
+        "key": "customer.mobile_phone",
+        "name": {"pt_BR": "Celular do cliente", "en": "Customer mobile phone"},
+        "description": {"pt_BR": "Celular do cliente da venda", "en": "Sale customer mobile phone"}
+      },
+      {
+        "key": "customer.person_type",
+        "name": {"pt_BR": "Tipo de pessoa do cliente", "en": "Customer person type"},
+        "description": {"pt_BR": "Tipo de pessoa do cliente da venda", "en": "Sale customer person type"}
+      },
+      {
+        "key": "customer.document",
+        "name": {"pt_BR": "CPF/CNPJ do cliente", "en": "Customer document"},
+        "description": {"pt_BR": "CPF/CNPJ do cliente da venda", "en": "Sale customer document"}
+      },
+      {
+        "key": "customer.identity_document",
+        "name": {"pt_BR": "RG do cliente", "en": "Customer identity document"},
+        "description": {"pt_BR": "RG do cliente da venda", "en": "Sale customer identity document"}
+      },
+      {
+        "key": "customer.state_registration_number",
+        "name": {"pt_BR": "Número de inscrição estadual do cliente", "en": "Customer state registration number"},
+        "description": {"pt_BR": "Número de inscrição estadual do cliente da venda", "en": "Sale customer state registration number"}
+      },
+      {
+        "key": "customer.state_registration_type",
+        "name": {"pt_BR": "Tipo de inscrição estadual do cliente", "en": "Customer state registration type"},
+        "description": {"pt_BR": "Tipo de inscrição estadual do cliente da venda", "en": "Sale customer state registration type"}
+      },
+      {
+        "key": "customer.city_registration",
+        "name": {"pt_BR": "Inscrição municipal do cliente", "en": "Customer city registration"},
+        "description": {"pt_BR": "Inscrição municipal do cliente da venda", "en": "Sale customer city registration"}
+      },
+      {
+        "key": "customer.date_of_birth",
+        "source": "format_date(source[:emission],%q(%d/%m/%Y))",
+        "force_source": true,
+        "name": {"pt_BR": "Data de nascimento do cliente", "en": "Customer date of birth"},
+        "description": {"pt_BR": "Data de nascimento do cliente da venda", "en": "Sale customer date of birth"}
+      },
+      {
+        "key": "customer.notes",
+        "name": {"pt_BR": "Notas do cliente", "en": "Customer notes"},
+        "description": {"pt_BR": "Notas do cliente da venda", "en": "Sale customer notes"}
+      },
+      {
+        "key": "customer.address.street",
+        "name": {"pt_BR": "Rua do endereço do cliente", "en": "Customer address street"},
+        "description": {"pt_BR": "Rua do endereço do cliente da venda", "en": "Sale customer address street"}
+      },
+      {
+        "key": "customer.address.number",
+        "name": {"pt_BR": "Número do endereço do cliente", "en": "Customer address number"},
+        "description": {"pt_BR": "Número do endereço do cliente da venda", "en": "Sale customer address number"}
+      },
+      {
+        "key": "customer.address.complement",
+        "name": {"pt_BR": "Complemento do endereço do cliente", "en": "Customer address complement"},
+        "description": {"pt_BR": "Complemento do endereço do cliente da venda", "en": "Sale customer address complement"}
+      },
+      {
+        "key": "customer.address.zip_code",
+        "name": {"pt_BR": "CEP do endereço do cliente", "en": "Customer address zip code"},
+        "description": {"pt_BR": "CEP do endereço do cliente da venda", "en": "Sale customer address zip code"}
+      },
+      {
+        "key": "customer.address.neighborhood",
+        "name": {"pt_BR": "Bairro do endereço do cliente", "en": "Customer address neighborhood"},
+        "description": {"pt_BR": "Bairro do endereço do cliente da venda", "en": "Sale customer address neighborhood"}
+      },
+      {
+        "key": "customer.address.city.name",
+        "name": {"pt_BR": "Nome da cidade do endereço do cliente", "en": "Customer address city name"},
+        "description": {"pt_BR": "Cidade do endereço do cliente da venda", "en": "Sale customer address city name"}
+      },
+      {
+        "key": "customer.address.state.name",
+        "name": {"pt_BR": "Nome do estado do endereço do cliente", "en": "Customer address state name"},
+        "description": {"pt_BR": "Estado do endereço do cliente da venda", "en": "Sale customer address state name"}
+      },
+      {
+        "key": "discount.measure_unit",
+        "name": {"pt_BR": "Unidade de medida do disconto", "en": "Discount measure unit"},
+        "description": {"pt_BR": "Unidade de medida do disconto da venda", "en": "Sale discount measure unit"}
+      },
+      {
+        "key": "discount.rate",
+        "name": {"pt_BR": "Taxa do disconto", "en": "Discount rate"},
+        "description": {"pt_BR": "Taxa do disconto da venda", "en": "Sale discount rate"}
+      },
+      {
+        "key": "payment.type",
+        "name": {"pt_BR": "Tipo do pagamento", "en": "Payment type"},
+        "description": {"pt_BR": "Tipo do pagamento da venda", "en": "Sale payment type"}
+      },
+      {
+        "key": "payment.installments",
+        "name": {"pt_BR": "Prestações do pagamento", "en": "Payment installments"},
+        "description": {"pt_BR": "Prestações do pagamento da venda", "en": "Sale payment installments"}
+      },
+      {
+        "key": "notes",
+        "name": {"pt_BR": "Notas", "en": "Notes"},
+        "description": {"pt_BR": "Notas da venda", "en": "Sale notes"}
+      },
+      {
+        "key": "shipping_cost",
+        "source": "format_currency(source[:shipping_cost])",
+        "force_source": true,
+        "name": {"pt_BR": "Frete", "en": "Shipping cost"},
+        "description": {"pt_BR": "Frete da venda", "en": "Sale shipping cost"}
+      },
+      {
+        "key": "total",
+        "source": "format_currency(source[:total])",
+        "force_source": true,
+        "name": {"pt_BR": "Total", "en": "Total"},
+        "description": {"pt_BR": "Total da venda", "en": "Sale total"}
+      }
+    ]
+  },
+  "trigger_type": "polling",
+  "idempotent": [
+    {
+      "type": "body",
+      "field": "id"
+    }
+  ],
+  "base_created_at_filter": {
+    "field": "emission",
+    "zone": "London",
+    "end_of_day": true
+  },
+  "base_datetime_filter": {
+    "format": "%Y-%m-%dT%H:%M:%S.%LZ"
+  },
+  "request": {
+    "method_name": "/sales",
+    "json_api": true,
+    "error_fields" : ["message"],
+    "params": {
+      "emission_start": "{base_datetime_filter}",
+      "size": 100
+    },
+    "additional_resources": [
+      {
+        "method": "/customers/",
+        "name": "customer"
+      }
+    ]
+  }
+}
