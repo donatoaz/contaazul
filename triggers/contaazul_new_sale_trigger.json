@@ -183,13 +183,8 @@
       "field": "id"
     }
   ],
-  "base_created_at_filter": {
-    "field": "emission",
-    "zone": "London",
-    "end_of_day": true
-  },
   "base_datetime_filter": {
-    "format": "%Y-%m-%dT%H:%M:%S.%LZ"
+    "format": "%Y-%m-%d"
   },
   "request": {
     "method_name": "/sales",
@@ -197,7 +192,7 @@
     "error_fields" : ["message"],
     "params": {
       "emission_start": "{base_datetime_filter}",
-      "size": 100
+      "emission_end": "9999-12-31"
     },
     "additional_resources": [
       {
