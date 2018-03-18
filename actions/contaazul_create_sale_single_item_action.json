@@ -26,7 +26,7 @@
         "visible": true,
         "field_type": "custom",
         "data_type": "datetime",
-        "date_format": "%Y-%m-%dT%H:%M:%S.%LZ"
+        "date_format": "%Y-%m-%dT03:00:00.000Z"
       },
       {
         "key": "status",
@@ -274,7 +274,7 @@
             "json_api": true,
             "params": [
               {"field": "name", "value": "{item.description}", "type": "string"},
-              {"field": "value", "value": "{item.value}", "type": "string"}
+              {"field": "value", "value": "{item.value}", "type": "decimal"}
             ],
             "append_params": [
               {"name": "item_id", "value": "data[:hook][:id]"}
@@ -311,7 +311,7 @@
             "json_api": true,
             "params": [
               {"field": "name", "value": "{item.description}", "type": "string"},
-              {"field": "value", "value": "{item.value}", "type": "string"}
+              {"field": "value", "value": "{item.value}", "type": "decimal"}
             ],
             "append_params": [
               {"name": "item_id", "value": "data[:hook][:id]"}
