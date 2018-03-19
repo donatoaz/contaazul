@@ -193,7 +193,7 @@
     "params": {
       "emission_start": "{base_datetime_filter}",
       "emission_end": "9999-12-31",
-      "size": 1000
+      "size": 100
     },
     "additional_resources": [
       {

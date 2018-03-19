@@ -26,7 +26,7 @@
         "visible": true,
         "field_type": "custom",
         "data_type": "datetime",
-        "date_format": "%Y-%m-%dT03:00:00.000Z"
+        "date_format": "%Y-%m-%dT12:00:00.000Z"
       },
       {
         "key": "status",
