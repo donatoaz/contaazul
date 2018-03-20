@@ -143,6 +143,24 @@
         "data_type": "decimal"
       },
       {
+        "key": "due_day",
+        "name": {"pt_BR": "Dia do vencimento", "en": "Due day"},
+        "description": {"pt_BR": "Dia do vencimento do contrato", "en": "Contract notes due day"},
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "integer"
+      },
+      {
+        "key": "duration",
+        "name": {"pt_BR": "Duração", "en": "Duration"},
+        "description": {"pt_BR": "Duração do contrato", "en": "Contract notes duration"},
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "integer"
+      },
+      {
         "key": "discount.measure_unit",
         "label": {"pt_BR": "Unidade de medida do disconto", "en": "Discount measure unit"},
         "description": {"pt_BR": "Unidade de medida do disconto da venda", "en": "Contract discount measure unit"},
