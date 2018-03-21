@@ -50,11 +50,15 @@
       },
       {
         "key": "customer.business_phone",
+        "source": "source[:customer_id][:business_phone]",
+        "force_source": true,
         "name": {"pt_BR": "Telefone do cliente", "en": "Customer phone"},
         "description": {"pt_BR": "Telefone do cliente da venda", "en": "Sale customer phone"}
       },
       {
         "key": "customer.mobile_phone",
+        "source": "source[:customer_id][:mobile_phone]",
+        "force_source": true,
         "name": {"pt_BR": "Celular do cliente", "en": "Customer mobile phone"},
         "description": {"pt_BR": "Celular do cliente da venda", "en": "Sale customer mobile phone"}
       },
@@ -65,73 +69,99 @@
       },
       {
         "key": "customer.document",
+        "source": "source[:customer_id][:document]",
+        "force_source": true,
         "name": {"pt_BR": "CPF/CNPJ do cliente", "en": "Customer document"},
         "description": {"pt_BR": "CPF/CNPJ do cliente da venda", "en": "Sale customer document"}
       },
       {
         "key": "customer.identity_document",
+        "source": "source[:customer_id][:identity_document]",
+        "force_source": true,
         "name": {"pt_BR": "RG do cliente", "en": "Customer identity document"},
         "description": {"pt_BR": "RG do cliente da venda", "en": "Sale customer identity document"}
       },
       {
         "key": "customer.state_registration_number",
+        "source": "source[:customer_id][:state_registration_number]",
+        "force_source": true,
         "name": {"pt_BR": "Número de inscrição estadual do cliente", "en": "Customer state registration number"},
         "description": {"pt_BR": "Número de inscrição estadual do cliente da venda", "en": "Sale customer state registration number"}
       },
       {
         "key": "customer.state_registration_type",
+        "source": "source[:customer_id][:state_registration_type]",
+        "force_source": true,
         "name": {"pt_BR": "Tipo de inscrição estadual do cliente", "en": "Customer state registration type"},
         "description": {"pt_BR": "Tipo de inscrição estadual do cliente da venda", "en": "Sale customer state registration type"}
       },
       {
         "key": "customer.city_registration",
+        "source": "source[:customer_id][:city_registration]",
+        "force_source": true,
         "name": {"pt_BR": "Inscrição municipal do cliente", "en": "Customer city registration"},
         "description": {"pt_BR": "Inscrição municipal do cliente da venda", "en": "Sale customer city registration"}
       },
       {
         "key": "customer.date_of_birth",
-        "source": "format_date(source[:emission],%q(%d/%m/%Y))",
+        "source": "format_date(source[:customer_id][:date_of_birth],%q(%d/%m/%Y))",
         "force_source": true,
         "name": {"pt_BR": "Data de nascimento do cliente", "en": "Customer date of birth"},
         "description": {"pt_BR": "Data de nascimento do cliente da venda", "en": "Sale customer date of birth"}
       },
       {
         "key": "customer.notes",
+        "source": "source[:customer_id][:notes]",
+        "force_source": true,
         "name": {"pt_BR": "Notas do cliente", "en": "Customer notes"},
         "description": {"pt_BR": "Notas do cliente da venda", "en": "Sale customer notes"}
       },
       {
         "key": "customer.address.street",
+        "source": "source[:customer_id][:address][:street]",
+        "force_source": true,
         "name": {"pt_BR": "Rua do endereço do cliente", "en": "Customer address street"},
         "description": {"pt_BR": "Rua do endereço do cliente da venda", "en": "Sale customer address street"}
       },
       {
         "key": "customer.address.number",
+        "source": "source[:customer_id][:address][:number]",
+        "force_source": true,
         "name": {"pt_BR": "Número do endereço do cliente", "en": "Customer address number"},
         "description": {"pt_BR": "Número do endereço do cliente da venda", "en": "Sale customer address number"}
       },
       {
         "key": "customer.address.complement",
+        "source": "source[:customer_id][:address][:complement]",
+        "force_source": true,
         "name": {"pt_BR": "Complemento do endereço do cliente", "en": "Customer address complement"},
         "description": {"pt_BR": "Complemento do endereço do cliente da venda", "en": "Sale customer address complement"}
       },
       {
         "key": "customer.address.zip_code",
+        "source": "source[:customer_id][:address][:zip_code]",
+        "force_source": true,
         "name": {"pt_BR": "CEP do endereço do cliente", "en": "Customer address zip code"},
         "description": {"pt_BR": "CEP do endereço do cliente da venda", "en": "Sale customer address zip code"}
       },
       {
         "key": "customer.address.neighborhood",
+        "source": "source[:customer_id][:address][:neighborhood]",
+        "force_source": true,
         "name": {"pt_BR": "Bairro do endereço do cliente", "en": "Customer address neighborhood"},
         "description": {"pt_BR": "Bairro do endereço do cliente da venda", "en": "Sale customer address neighborhood"}
       },
       {
         "key": "customer.address.city.name",
+        "source": "source[:customer_id][:address][:city][:name]",
+        "force_source": true,
         "name": {"pt_BR": "Nome da cidade do endereço do cliente", "en": "Customer address city name"},
         "description": {"pt_BR": "Cidade do endereço do cliente da venda", "en": "Sale customer address city name"}
       },
       {
         "key": "customer.address.state.name",
+        "source": "source[:customer_id][:address][:state][:name]",
+        "force_source": true,
         "name": {"pt_BR": "Nome do estado do endereço do cliente", "en": "Customer address state name"},
         "description": {"pt_BR": "Estado do endereço do cliente da venda", "en": "Sale customer address state name"}
       },
@@ -193,7 +223,7 @@
     "additional_resources": [
       {
         "method": "/customers/",
-        "name": "customer"
+        "name": "customer_id"
       }
     ]
   }
