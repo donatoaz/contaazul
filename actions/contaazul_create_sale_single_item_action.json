@@ -102,7 +102,6 @@
         "key": "customer.mobile_phone",
         "name": {"pt_BR": "Celular do cliente", "en": "Customer mobile phone"},
         "description": {"pt_BR": "Celular do cliente da venda", "en": "Sale customer mobile phone"},
-        "required": true,
         "visible": true,
         "field_type": "custom",
         "data_type": "string"
