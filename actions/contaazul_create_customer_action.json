@@ -258,6 +258,10 @@
   "request": {
     "method_name": "/customers",
     "json_api": true,
+    "custom_params": [{
+      "name": "address",
+      "value": "data[:address].to_h.tap{|a|a[:zip_code]=a[:zip_code].to_s.gsub(/([0-9]{5})([0-9]{3})/){%Q(#{$1}-#{$2})}}"
+    }],
     "error_fields" : ["message"]
   }
 }
