@@ -191,7 +191,7 @@
     "method_name": "/sales",
     "json_api": true,
     "custom_params": [
-      {"name": "payment", "value": "{type: %Q(CASH), installments: [{number: 0, value: data[:item][:value]*data[:item][:quantity], due_date: data[:emission], status: %Q(ACQUITTED)}]}"},
+      {"name": "payment", "value": "{type: %Q(CASH), installments: [{number: 0, value: data[:items].sum{|i|i[:value]}*data[:items].sum{|i|i[:quantity]}, due_date: data[:emission], status: %Q(ACQUITTED)}]}"},
       {"name": "products", "value": "data[:item_types] == %Q(PRODUCTS) ? data[:items] : []"},
       {"name": "services", "value": "data[:item_types] == %Q(SERVICES) ? data[:items] : []"}
     ],
