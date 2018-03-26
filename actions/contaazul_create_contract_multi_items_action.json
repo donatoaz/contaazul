@@ -100,8 +100,8 @@
         "key": "customer.business_phone",
         "name": {"pt_BR": "Telefone do cliente", "en": "Customer phone"},
         "description": {"pt_BR": "Telefone do cliente do contrato", "en": "Contract customer phone"},
-        "required": true,
         "visible": true,
+        "advanced": true,
         "field_type": "custom",
         "data_type": "string"
       },
@@ -110,6 +110,7 @@
         "name": {"pt_BR": "Celular do cliente", "en": "Customer mobile phone"},
         "description": {"pt_BR": "Celular do cliente da venda", "en": "Sale customer mobile phone"},
         "visible": true,
+        "advanced": true,
         "field_type": "custom",
         "data_type": "string"
       },
@@ -160,6 +161,7 @@
         "description": {"pt_BR": "Unidade de medida do disconto do contrato", "en": "Contract discount measure unit"},
         "placeholder": {"pt_BR": "Unidade de medida do disconto do contrato", "en": "Contract discount measure unit"},
         "visible": true,
+        "advanced": true,
         "field_type": "dropdown",
         "data_type": "string",
         "list": {
@@ -175,6 +177,7 @@
         "name": {"pt_BR": "Taxa do disconto", "en": "Discount rate"},
         "description": {"pt_BR": "Taxa do disconto do contrato", "en": "Contract discount rate"},
         "visible": true,
+        "advanced": true,
         "field_type": "custom",
         "data_type": "decimal"
       },
@@ -183,6 +186,7 @@
         "name": {"pt_BR": "Notas", "en": "Notes"},
         "description": {"pt_BR": "Notas do contrato", "en": "Contract notes"},
         "visible": true,
+        "advanced": true,
         "field_type": "custom",
         "data_type": "string"
       },
@@ -191,6 +195,7 @@
         "name": {"pt_BR": "Frete", "en": "Shipping cost"},
         "description": {"pt_BR": "Frete do contrato", "en": "Contract shipping cost"},
         "visible": true,
+        "advanced": true,
         "field_type": "custom",
         "data_type": "decimal"
       },
@@ -206,8 +211,8 @@
     "method_name": "/contracts",
     "json_api": true,
     "custom_params": [
-      {"name": "products", "value": "data[:item_types] == %Q(PRODUCTS) ? data[:items] : []"},
-      {"name": "services", "value": "data[:item_types] == %Q(SERVICES) ? data[:items] : []"}
+      {"name": "products", "value": "data[:item_types] == %(PRODUCTS) ? data[:items] : []"},
+      {"name": "services", "value": "data[:item_types] == %(SERVICES) ? data[:items] : []"}
     ],
     "error_fields" : ["message"],
     "pre_hooks": {
@@ -219,8 +224,8 @@
             "method_name": "/customers",
             "json_api": true,
             "params": [
-              {"field": "name", "value": "data[:customer][:document].blank? ? data[:customer][:name] : %Q()", "custom": true},
-              {"field": "document", "value": "{customer.document}", "type": "string", "custom": true},
+              {"field": "name", "value": "data[:customer][:document].blank? ? data[:customer][:name] : %()", "custom": true},
+              {"field": "document", "value": "{customer.document}", "type": "string"},
               {"field": "size", "value": 1, "type": "integer"}
             ]
           }

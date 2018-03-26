@@ -23,7 +23,7 @@
       },
       {
         "key": "emission",
-        "source": "format_date(source[:emission],%q(%d/%m/%Y %H:%M:%S))",
+        "source": "format_date(source[:emission],%(%d/%m/%Y %H:%M:%S))",
         "force_source": true,
         "name": {"pt_BR": "Data/hora de emissão", "en": "Emission date/time"},
         "description": {"pt_BR": "Data/hora de emissão da venda", "en": "Sale emission date/time"}
@@ -104,7 +104,7 @@
       },
       {
         "key": "customer.date_of_birth",
-        "source": "format_date(source[:customer_id][:date_of_birth],%q(%d/%m/%Y))",
+        "source": "format_date(source[:customer_id][:date_of_birth],%(%d/%m/%Y))",
         "force_source": true,
         "name": {"pt_BR": "Data de nascimento do cliente", "en": "Customer date of birth"},
         "description": {"pt_BR": "Data de nascimento do cliente da venda", "en": "Sale customer date of birth"}

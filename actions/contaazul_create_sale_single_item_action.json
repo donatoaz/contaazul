@@ -93,8 +93,8 @@
         "key": "customer.business_phone",
         "name": {"pt_BR": "Telefone do cliente", "en": "Customer phone"},
         "description": {"pt_BR": "Telefone do cliente da venda", "en": "Sale customer phone"},
-        "required": true,
         "visible": true,
+        "advanced": true,
         "field_type": "custom",
         "data_type": "string"
       },
@@ -103,6 +103,7 @@
         "name": {"pt_BR": "Celular do cliente", "en": "Customer mobile phone"},
         "description": {"pt_BR": "Celular do cliente da venda", "en": "Sale customer mobile phone"},
         "visible": true,
+        "advanced": true,
         "field_type": "custom",
         "data_type": "string"
       },
@@ -156,6 +157,7 @@
         "description": {"pt_BR": "Unidade de medida do disconto da venda", "en": "Sale discount measure unit"},
         "placeholder": {"pt_BR": "Unidade de medida do disconto da venda", "en": "Sale discount measure unit"},
         "visible": true,
+        "advanced": true,
         "field_type": "dropdown",
         "data_type": "string",
         "list": {
@@ -171,6 +173,7 @@
         "name": {"pt_BR": "Taxa do disconto", "en": "Discount rate"},
         "description": {"pt_BR": "Taxa do disconto da venda", "en": "Sale discount rate"},
         "visible": true,
+        "advanced": true,
         "field_type": "custom",
         "data_type": "decimal"
       },
@@ -179,6 +182,7 @@
         "name": {"pt_BR": "Notas", "en": "Notes"},
         "description": {"pt_BR": "Notas da venda", "en": "Sale notes"},
         "visible": true,
+        "advanced": true,
         "field_type": "custom",
         "data_type": "string"
       },
@@ -187,6 +191,7 @@
         "name": {"pt_BR": "Frete", "en": "Shipping cost"},
         "description": {"pt_BR": "Frete da venda", "en": "Sale shipping cost"},
         "visible": true,
+        "advanced": true,
         "field_type": "custom",
         "data_type": "decimal"
       },
@@ -208,9 +213,9 @@
     "method_name": "/sales",
     "json_api": true,
     "custom_params": [
-      {"name": "payment", "value": "{type: %Q(CASH), installments: [{number: 0, value: data[:item][:value]*data[:item][:quantity], due_date: data[:emission], status: %Q(ACQUITTED)}]}"},
-      {"name": "products", "value": "data[:item_type] == %Q(PRODUCT) ? [data[:item].merge(product_id: data[:item_id])] : []"},
-      {"name": "services", "value": "data[:item_type] == %Q(SERVICE) ? [data[:item].merge(service_id: data[:item_id])] : []"}
+      {"name": "payment", "value": "{type: %(CASH), installments: [{number: 0, value: data[:item][:value]*data[:item][:quantity], due_date: data[:emission], status: %(ACQUITTED)}]}"},
+      {"name": "products", "value": "data[:item_type] == %(PRODUCT) ? [data[:item].merge(product_id: data[:item_id])] : []"},
+      {"name": "services", "value": "data[:item_type] == %(SERVICE) ? [data[:item].merge(service_id: data[:item_id])] : []"}
     ],
     "error_fields" : ["message"],
     "pre_hooks": {
@@ -222,7 +227,7 @@
             "method_name": "/customers",
             "json_api": true,
             "params": [
-              {"field": "name", "value": "data[:customer][:document].blank? ? data[:customer][:name] : %Q()", "custom": true},
+              {"field": "name", "value": "data[:customer][:document].blank? ? data[:customer][:name] : %()", "custom": true},
               {"field": "document", "value": "{customer.document}", "type": "string"},
               {"field": "size", "value": 1, "type": "integer"}
             ],
