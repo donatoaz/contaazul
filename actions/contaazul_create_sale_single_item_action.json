@@ -1,0 +1,332 @@
+{
+	"name": {
+    "pt_BR": "Criar uma nova venda",
+    "en": "Create a new sale"
+  },
+  "action_key": "create_sale_single_item",
+  "description": {
+  	"pt_BR": "Criar uma nova venda",
+    "en": "Create a new sale"
+  },
+  "action_fields": {
+    "fields": [
+      {
+        "key": "number",
+        "name": { "pt_BR": "Número", "en": "Number" },
+        "description": { "pt_BR": "Número da venda", "en": "Sale number"},
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "integer"
+      },
+      {
+        "key": "emission",
+        "name": { "pt_BR": "Data/hora de emissão", "en": "Emission data/time" },
+        "description": { "pt_BR": "Data/hora de emissão da venda", "en": "Sale emission date/time"},
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "datetime",
+        "date_format": "%Y-%m-%dT12:00:00.000Z"
+      },
+      {
+        "key": "status",
+        "label": { "pt_BR": "Status", "en": "Status" },
+        "description": { "pt_BR": "Status da venda", "en": "Sale status"},
+        "placeholder": { "pt_BR": "Status da venda", "en": "Sale status"},
+        "required": true,
+        "visible": true,
+        "field_type": "dropdown",
+        "data_type": "string",
+        "list": {
+          "type" : "local",
+          "data": [
+            {"label": "Revisão pendente", "value": "PENDING"},
+            {"label": "Venda", "value": "COMMITTED"},
+            {"label": "Cancelado", "value": "CANCELED"}
+          ]
+        }
+      },
+      {
+        "key": "customer.name",
+        "name": {"pt_BR": "Nome do cliente", "en": "Customer name"},
+        "description": {"pt_BR": "Nome do cliente da venda", "en": "Sale customer name"},
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "customer.email",
+        "name": {"pt_BR": "E-mail do cliente", "en": "Customer e-mail"},
+        "description": {"pt_BR": "E-mail do cliente da venda", "en": "Sale customer e-mail"},
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "customer.document",
+        "name": {"pt_BR": "CPF/CNPJ do cliente", "en": "Customer document"},
+        "description": {"pt_BR": "CPF/CNPJ do cliente da venda", "en": "Sale customer document"},
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "customer.person_type",
+        "label": {"pt_BR": "Tipo de pessoa do cliente", "en": "Customer person type"},
+        "description": {"pt_BR": "Tipo de pessoa do cliente da venda", "en": "Sale customer person type"},
+        "placeholder": {"pt_BR": "Tipo de pessoa do cliente da venda", "en": "Sale customer person type"},
+        "required": true,
+        "visible": true,
+        "field_type": "dropdown",
+        "data_type": "string",
+        "list": {
+          "type" : "local",
+          "data": [
+            {"label": "Pessoa física", "value": "NATURAL"},
+            {"label": "Pessoa jurídica", "value": "LEGAL"}
+          ]
+        }
+      },
+      {
+        "key": "customer.business_phone",
+        "name": {"pt_BR": "Telefone do cliente", "en": "Customer phone"},
+        "description": {"pt_BR": "Telefone do cliente da venda", "en": "Sale customer phone"},
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "customer.mobile_phone",
+        "name": {"pt_BR": "Celular do cliente", "en": "Customer mobile phone"},
+        "description": {"pt_BR": "Celular do cliente da venda", "en": "Sale customer mobile phone"},
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "item_type",
+        "label": {"pt_BR": "Tipo de item", "en": "Item type"},
+        "description": {"pt_BR": "Tipo de item da venda", "en": "Sale item type"},
+        "placeholder": {"pt_BR": "Tipo de item da venda", "en": "Sale item type"},
+        "required": true,
+        "visible": true,
+        "field_type": "dropdown",
+        "data_type": "string",
+        "list": {
+          "type" : "local",
+          "data": [
+            {"label": "Produto", "value": "PRODUCT"},
+            {"label": "Serviço", "value": "SERVICE"}
+          ]
+        }
+      },
+      {
+        "key": "item.description",
+        "name": { "pt_BR": "Descrição do item", "en": "Item description" },
+        "description": { "pt_BR": "Descrição do item da venda", "en": "Sale item description" },
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "item.quantity",
+        "name": { "pt_BR": "Quantidade do item", "en": "Item quantity" },
+        "description": { "pt_BR": "Quantidade do item da venda", "en": "Sale item quantity" },
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "integer"
+      },
+      {
+        "key": "item.value",
+        "name": { "pt_BR": "Valor do item", "en": "Item value" },
+        "description": { "pt_BR": "Valor do item da venda", "en": "Sale item value" },
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "decimal"
+      },
+      {
+        "key": "discount.measure_unit",
+        "label": {"pt_BR": "Unidade de medida do disconto", "en": "Discount measure unit"},
+        "description": {"pt_BR": "Unidade de medida do disconto da venda", "en": "Sale discount measure unit"},
+        "placeholder": {"pt_BR": "Unidade de medida do disconto da venda", "en": "Sale discount measure unit"},
+        "visible": true,
+        "field_type": "dropdown",
+        "data_type": "string",
+        "list": {
+          "type" : "local",
+          "data": [
+            {"label": "Porcentagem", "value": "PERCENT"},
+            {"label": "Valor", "value": "VALUE"}
+          ]
+        }
+      },
+      {
+        "key": "discount.rate",
+        "name": {"pt_BR": "Taxa do disconto", "en": "Discount rate"},
+        "description": {"pt_BR": "Taxa do disconto da venda", "en": "Sale discount rate"},
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "decimal"
+      },
+      {
+        "key": "notes",
+        "name": {"pt_BR": "Notas", "en": "Notes"},
+        "description": {"pt_BR": "Notas da venda", "en": "Sale notes"},
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "shipping_cost",
+        "name": {"pt_BR": "Frete", "en": "Shipping cost"},
+        "description": {"pt_BR": "Frete da venda", "en": "Sale shipping cost"},
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "decimal"
+      },
+      {
+        "key": "customer_id"
+      },
+      {
+        "key": "products"
+      },
+      {
+        "key": "services"
+      },
+      {
+        "key": "payment"
+      }
+    ]
+  },
+  "request": {
+    "method_name": "/sales",
+    "json_api": true,
+    "custom_params": [
+      {"name": "payment", "value": "{type: %Q(CASH), installments: [{number: 0, value: data[:item][:value]*data[:item][:quantity], due_date: data[:emission], status: %Q(ACQUITTED)}]}"},
+      {"name": "products", "value": "data[:item_type] == %Q(PRODUCT) ? [data[:item].merge(product_id: data[:item_id])] : []"},
+      {"name": "services", "value": "data[:item_type] == %Q(SERVICE) ? [data[:item].merge(service_id: data[:item_id])] : []"}
+    ],
+    "error_fields" : ["message"],
+    "pre_hooks": {
+      "hooks": [
+        {
+          "name": "Buscar cliente",
+          "request": {
+            "verb": "get",
+            "method_name": "/customers",
+            "json_api": true,
+            "params": [
+              {"field": "name", "value": "data[:customer][:document].blank? ? data[:customer][:name] : %Q()", "custom": true},
+              {"field": "document", "value": "{customer.document}", "type": "string"},
+              {"field": "size", "value": 1, "type": "integer"}
+            ],
+            "append_params": [
+              {"name": "customer_id", "value": "data[:hook].first.try(:[], :id)"}
+            ]
+          }
+        },
+        {
+          "name": "Criar cliente",
+          "conditions": [[
+            {"field": "customer_id", "condition": "equal", "value": null}
+          ]],
+          "request": {
+            "verb": "post",
+            "method_name": "/customers",
+            "json_api": true,
+            "params": [
+              {"field": "name", "value": "{customer.name}", "type": "string"},
+              {"field": "email", "value": "{customer.email}", "type": "string"},
+              {"field": "document", "value": "{customer.document}", "type": "string"},
+              {"field": "person_type", "value": "{customer.person_type}", "type": "string"},
+              {"field": "business_phone", "value": "{customer.business_phone}", "type": "string"}
+            ],
+            "append_params": [
+              {"name": "customer_id", "value": "data[:hook][:id]"}
+            ]
+          }
+        },
+        {
+          "name": "Buscar produto",
+          "conditions": [[
+            {"field": "item_type", "condition": "equal", "value": "PRODUCT"}
+          ]],
+          "request": {
+            "verb": "get",
+            "method_name": "/products",
+            "json_api": true,
+            "params": [
+              {"field": "name", "value": "{item.description}", "type": "string"},
+              {"field": "size", "value": 1, "type": "integer"}
+            ],
+            "append_params": [
+              {"name": "item_id", "value": "data[:hook].first.try(:[], :id)"}
+            ]
+          }
+        },
+        {
+          "name": "Criar produto",
+          "conditions": [[
+            {"field": "item_type", "condition": "equal", "value": "PRODUCT"},
+            {"field": "item_id", "condition": "equal", "value": null}
+          ]],
+          "request": {
+            "verb": "post",
+            "method_name": "/products",
+            "json_api": true,
+            "params": [
+              {"field": "name", "value": "{item.description}", "type": "string"},
+              {"field": "value", "value": "{item.value}", "type": "decimal"}
+            ],
+            "append_params": [
+              {"name": "item_id", "value": "data[:hook][:id]"}
+            ]
+          }
+        },
+        {
+          "name": "Buscar serviço",
+          "conditions": [[
+            {"field": "item_type", "condition": "equal", "value": "SERVICE"}
+          ]],
+          "request": {
+            "verb": "get",
+            "method_name": "/services",
+            "json_api": true,
+            "params": [
+              {"field": "name", "value": "{item.description}", "type": "string"},
+              {"field": "size", "value": 1, "type": "integer"}
+            ],
+            "append_params": [
+              {"name": "item_id", "value": "data[:hook].first.try(:[], :id)"}
+            ]
+          }
+        },
+        {
+          "name": "Criar serviço",
+          "conditions": [[
+            {"field": "item_type", "condition": "equal", "value": "SERVICE"},
+            {"field": "item_id", "condition": "equal", "value": null}
+          ]],
+          "request": {
+            "verb": "post",
+            "method_name": "/services",
+            "json_api": true,
+            "params": [
+              {"field": "name", "value": "{item.description}", "type": "string"},
+              {"field": "value", "value": "{item.value}", "type": "decimal"}
+            ],
+            "append_params": [
+              {"name": "item_id", "value": "data[:hook][:id]"}
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
