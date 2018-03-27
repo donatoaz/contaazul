@@ -13,15 +13,15 @@
       {
         "key": "number",
         "name": { "pt_BR": "Número", "en": "Number" },
-        "description": { "pt_BR": "Número do contrato", "en": "Contract number"},
+        "description": { "pt_BR": "Número referente a primeira venda(parcela) deste contrato, onde as demais vendas serão sequenciais ao número da sua última venda realizada dentro do ContaAzul", "en": "Contract number"},
         "visible": true,
         "field_type": "custom",
         "data_type": "integer"
       },
       {
         "key": "emission",
-        "name": { "pt_BR": "Data/hora de emissão", "en": "Emission data/time" },
-        "description": { "pt_BR": "Data/hora de emissão do contrato", "en": "Contract emission date/time"},
+        "name": { "pt_BR": "Data da venda", "en": "Sale date" },
+        "description": { "pt_BR": "Data de emissão da venda", "en": "Sale emission date" },
         "required": true,
         "visible": true,
         "field_type": "custom",
@@ -30,9 +30,9 @@
       },
       {
         "key": "status",
-        "label": { "pt_BR": "Status", "en": "Status" },
-        "description": { "pt_BR": "Status do contrato", "en": "Contract status"},
-        "placeholder": { "pt_BR": "Status do contrato", "en": "Contract status"},
+        "label": { "pt_BR": "Status da negociação", "en": "Negociation status" },
+        "description": { "pt_BR": "Status da negociação da venda", "en": "Sale negociation status"},
+        "placeholder": { "pt_BR": "Status da negociação da venda", "en": "Sale negociation status"},
         "required": true,
         "visible": true,
         "field_type": "dropdown",
@@ -45,13 +45,6 @@
             {"label": "Cancelado", "value": "CANCELED"}
           ]
         }
-      },
-      {
-        "key": "customer_id",
-        "name": {"pt_BR": "ID do cliente", "en": "Customer ID"},
-        "description": {"pt_BR": "ID do cliente do contrato", "en": "Contract customer ID"},
-        "field_type": "custom",
-        "data_type": "string"
       },
       {
         "key": "customer.name",
@@ -81,7 +74,7 @@
       },
       {
         "key": "customer.person_type",
-        "label": {"pt_BR": "Tipo de pessoa do cliente", "en": "Customer person type"},
+        "label": {"pt_BR": "Tipo do cliente", "en": "Customer type"},
         "description": {"pt_BR": "Tipo de pessoa do cliente do contrato", "en": "Contract customer person type"},
         "placeholder": {"pt_BR": "Tipo de pessoa do cliente do contrato", "en": "Contract customer person type"},
         "required": true,
@@ -116,9 +109,9 @@
       },
       {
         "key": "item_types",
-        "label": {"pt_BR": "Tipos de item", "en": "Item types"},
-        "description": {"pt_BR": "Tipos de item do contrato", "en": "Contract item types"},
-        "placeholder": {"pt_BR": "Tipos de item do contrato", "en": "Contract item types"},
+        "label": {"pt_BR": "Tipo dos itens", "en": "Items type"},
+        "description": {"pt_BR": "Tipo dos item do contrato", "en": "Contract items type"},
+        "placeholder": {"pt_BR": "Tipo dos item do contrato", "en": "Contract items type"},
         "required": true,
         "visible": true,
         "field_type": "dropdown",
@@ -139,8 +132,8 @@
       },
       {
         "key": "due_day",
-        "name": {"pt_BR": "Dia do vencimento", "en": "Due day"},
-        "description": {"pt_BR": "Dia do vencimento do contrato", "en": "Contract notes due day"},
+        "name": {"pt_BR": "Dia da cobrança", "en": "Due day"},
+        "description": {"pt_BR": "Dia da cobrança do contrato", "en": "Contract due day"},
         "required": true,
         "visible": true,
         "field_type": "custom",
@@ -148,8 +141,8 @@
       },
       {
         "key": "duration",
-        "name": {"pt_BR": "Duração", "en": "Duration"},
-        "description": {"pt_BR": "Duração do contrato", "en": "Contract notes duration"},
+        "name": {"pt_BR": "Vigência total (em meses)", "en": "Duration (months)"},
+        "description": {"pt_BR": "Duração do contrato", "en": "Contract duration"},
         "required": true,
         "visible": true,
         "field_type": "custom",
@@ -157,9 +150,9 @@
       },
       {
         "key": "discount.measure_unit",
-        "label": {"pt_BR": "Unidade de medida do disconto", "en": "Discount measure unit"},
-        "description": {"pt_BR": "Unidade de medida do disconto do contrato", "en": "Contract discount measure unit"},
-        "placeholder": {"pt_BR": "Unidade de medida do disconto do contrato", "en": "Contract discount measure unit"},
+        "label": {"pt_BR": "Tipo do desconto", "en": "Discount type"},
+        "description": {"pt_BR": "Tipo do desconto do contrato", "en": "Contract discount type"},
+        "placeholder": {"pt_BR": "Tipo do desconto do contrato", "en": "Contract discount type"},
         "visible": true,
         "advanced": true,
         "field_type": "dropdown",
@@ -174,8 +167,8 @@
       },
       {
         "key": "discount.rate",
-        "name": {"pt_BR": "Taxa do disconto", "en": "Discount rate"},
-        "description": {"pt_BR": "Taxa do disconto do contrato", "en": "Contract discount rate"},
+        "name": {"pt_BR": "Desconto", "en": "Discount"},
+        "description": {"pt_BR": "Desconto do contrato", "en": "Contract discount"},
         "visible": true,
         "advanced": true,
         "field_type": "custom",
@@ -183,8 +176,8 @@
       },
       {
         "key": "notes",
-        "name": {"pt_BR": "Notas", "en": "Notes"},
-        "description": {"pt_BR": "Notas do contrato", "en": "Contract notes"},
+        "name": {"pt_BR": "Informações complementares", "en": "Additional information"},
+        "description": {"pt_BR": "Descreva outras informações que possam ser relevantes para você e seu cliente", "en": "Additional information about the sale"},
         "visible": true,
         "advanced": true,
         "field_type": "custom",
@@ -192,12 +185,15 @@
       },
       {
         "key": "shipping_cost",
-        "name": {"pt_BR": "Frete", "en": "Shipping cost"},
-        "description": {"pt_BR": "Frete do contrato", "en": "Contract shipping cost"},
+        "name": {"pt_BR": "Frete a cobrar do cliente", "en": "Shipping cost"},
+        "description": {"pt_BR": "Valor do frete da venda", "en": "Sale shipping value"},
         "visible": true,
         "advanced": true,
         "field_type": "custom",
         "data_type": "decimal"
+      },
+      {
+        "key": "customer_id"
       },
       {
         "key": "products"
