@@ -15,18 +15,9 @@
         "name": { "pt_BR": "Número", "en": "Number" },
         "description": { "pt_BR": "Número da venda", "en": "Sale number"},
         "visible": true,
+        "advanced": true,
         "field_type": "custom",
         "data_type": "integer"
-      },
-      {
-        "key": "emission",
-        "name": { "pt_BR": "Data da venda", "en": "Sale date" },
-        "description": { "pt_BR": "Data de emissão da venda", "en": "Sale emission date" },
-        "required": true,
-        "visible": true,
-        "field_type": "custom",
-        "data_type": "datetime",
-        "date_format": "%Y-%m-%dT12:00:00.000Z"
       },
       {
         "key": "status",
@@ -45,6 +36,16 @@
             {"label": "Cancelado", "value": "CANCELED"}
           ]
         }
+      },
+      {
+        "key": "emission",
+        "name": { "pt_BR": "Data da venda", "en": "Sale date" },
+        "description": { "pt_BR": "Data de emissão da venda", "en": "Sale emission date" },
+        "required": true,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "datetime",
+        "date_format": "%Y-%m-%dT12:00:00.000Z"
       },
       {
         "key": "customer.name",

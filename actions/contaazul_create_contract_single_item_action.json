@@ -15,6 +15,7 @@
         "name": { "pt_BR": "Número", "en": "Number" },
         "description": { "pt_BR": "Número referente a primeira venda(parcela) deste contrato, onde as demais vendas serão sequenciais ao número da sua última venda realizada dentro do ContaAzul", "en": "Contract number"},
         "visible": true,
+        "advanced": true,
         "field_type": "custom",
         "data_type": "integer"
       },
