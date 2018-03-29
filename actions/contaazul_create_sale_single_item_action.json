@@ -214,7 +214,7 @@
     "method_name": "/sales",
     "json_api": true,
     "custom_params": [
-      {"name": "payment", "value": "{type: %(CASH), installments: [{number: 0, value: data[:item][:value]*data[:item][:quantity], due_date: data[:emission], status: %(ACQUITTED)}]}"},
+      {"name": "payment", "value": "{type:%(CASH),installments:[{number:0,value:(((i=data[:item])[:value]*i[:quantity])-((m=(d=data[:discount])[:measure_unit])=='PERCENT' ? (s*(d[:rate].to_f/100)) : m=='VALUE' ? d[:rate].to_f : 0)).round(2),due_date:data[:emission],status:%(ACQUITTED)}]}"},
       {"name": "products", "value": "data[:item_type] == %(PRODUCT) ? [data[:item].merge(product_id: data[:item_id])] : []"},
       {"name": "services", "value": "data[:item_type] == %(SERVICE) ? [data[:item].merge(service_id: data[:item_id])] : []"}
     ],

@@ -193,7 +193,7 @@
     "method_name": "/sales",
     "json_api": true,
     "custom_params": [
-      {"name": "payment", "value": "{type: %(CASH), installments: [{number: 0, value: data[:items].sum{|i|i[:value]*i[:quantity]}, due_date: data[:emission], status: %(ACQUITTED)}]}"},
+      {"name": "payment", "value": "{type:%(CASH),installments:[{number:0,value:((s=data[:items].sum{|i|i[:value]*i[:quantity]})-((m=(d=data[:discount])[:measure_unit])=='PERCENT' ? (s*(d[:rate].to_f/100)) : m=='VALUE' ? d[:rate].to_f : 0)).round(2),due_date:data[:emission],status:%(ACQUITTED)}]}"},
       {"name": "products", "value": "data[:item_types] == %(PRODUCTS) ? data[:items] : []"},
       {"name": "services", "value": "data[:item_types] == %(SERVICES) ? data[:items] : []"}
     ],
